@@ -1,0 +1,14 @@
+resilience4j:
+  retry:
+    instances:
+      myRetry:
+        base-config: default
+    configs:
+      default:
+        max-attempts: 3
+        wait-duration:
+          seconds: 10
+        retry-exceptions:
+          - java.lang.IllegalArgumentException
+          - java.util.concurrent.TimeoutException
+          - java.lang.RuntimeException

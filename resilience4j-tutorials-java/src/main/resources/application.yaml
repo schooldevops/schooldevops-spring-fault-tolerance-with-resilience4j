@@ -1,0 +1,38 @@
+
+server:
+  port: 8080
+resilience4j:
+  retry:
+    configs:
+      default:
+        maxAttempts: 3
+        wait-duration:
+          seconds: 1
+        retryExceptions:
+          - java.lang.RuntimeException
+    instances:
+      exponential-backoff:
+        max-attempts: 5
+        wait-duration:
+          seconds: 1
+        enable-exponential-backoff: true
+        exponential-backoff-multiplier: 2
+      random-backoff:
+        max-attempts: 3
+        wait-duration:
+          seconds: 2s
+        enable-randomized-wait: true
+        randomized-wait-factor: 0.5
+      service:
+        base-config: default
+      service-predicate:
+        max-attempts: 3
+        wait-duration:
+          seconds: 2
+        result-predicate: com.schooldevops.springjava.resilience4jtutorials.predicate.CommandPredicate
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

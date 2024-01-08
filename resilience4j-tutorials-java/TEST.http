@@ -1,0 +1,5 @@
+### Get greeting retry
+GET http://localhost:8080/v1/retry/E
+
+### Get greeting retry
+GET http://localhost:8080/v1/retry/pred/A

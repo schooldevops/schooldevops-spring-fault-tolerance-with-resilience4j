@@ -1,0 +1,11 @@
+### GET retry
+GET localhost:8080/v1/retry
+
+### GET rate
+GET localhost:8080/v1/rate
+
+### GET bulkhead
+GET localhost:8080/v1/bulkhead
+
+### GET time
+GET localhost:8080/v1/time
