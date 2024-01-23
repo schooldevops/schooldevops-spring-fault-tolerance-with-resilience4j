@@ -1,5 +1,8 @@
 ### Get greeting retry
-GET http://localhost:8080/v1/retry/E
+GET http://localhost:8089/v1/retry/E
 
 ### Get greeting retry
-GET http://localhost:8080/v1/retry/pred/A
+GET http://localhost:8089/v1/retry/pred/A
+
+### Get greeting CircuitBreaker
+GET http://localhost:8089/v1/circuit/E
